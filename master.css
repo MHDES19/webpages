@@ -636,6 +636,98 @@ position: relative;
 }
 
 /*! end rating */
+/*? start team */
+.team{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.team .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    gap: 60px 40px;
+
+}
+.team .container .box{
+    position: relative;
+}
+.team .container .box::before , .team .container .box::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgb(35, 36, 36);
+    border-radius: 12px;
+    transition: var(--main-transition-duration);
+}
+.team .container .box::before{
+    width: calc(100% - 60px);
+    z-index: -2;
+    box-shadow: 6px 10px 13px 0 #000000;
+}
+.team .container .box::after{
+    width: 0;
+    z-index: -1;
+    background-color: var(--fill-effect-color);
+}
+.team .container .box:hover::after{
+    width: calc(100% - 60px);
+}
+.team .container .box .data{
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.team .container .box .data img{
+    width: calc(100% - 40px);
+    transition: var(--main-transition-duration);
+    filter: grayscale(120%);
+    border-radius: 10px;
+}
+.team .container .box:hover .data img{
+    filter: grayscale(0%);
+}
+.team .container .box .data ul{
+    padding: 0;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team .container .box .data ul li{
+    width: 40px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+.team .container .box:hover .data ul li i{
+    color: white;
+}
+.team .container .box .data ul li i {
+    color: var(--unvisible-text-color);
+    transition: var(--main-transition-duration);
+    font-size: 21px;
+}
+.team .container .box .data ul li i:hover{
+    color: var(--main-color);
+}
+.team .box .info {
+    padding-left: 71px;
+}
+.team .box .info h3{
+    margin: 15px 0 0;
+    transition: var(--main-transition-duration);
+}
+.team .box:hover h3 ,.team .box:hover p{
+    color: var(--main-color);
+}
+.team .box .info p{
+    margin-top: 10px;
+    padding-left: 7px;
+    transition: var(--main-transition-duration);
+}
+/*? end team */
 /** start animation */
 @keyframes up_and_down {
     0%,100%{
